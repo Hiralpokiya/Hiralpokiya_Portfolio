@@ -222,7 +222,10 @@
   .lesson .mono { color: #c4b5fd; font-size: 12.5px; }
 
   /* ---------- other projects ---------- */
-  .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 26px; }
+  .projects { display: grid; grid-template-columns: 1fr; gap: 22px; margin-top: 26px; }
+  .projects .card { flex-direction: row; }
+  .projects .card-art { height: auto; flex: 0 0 42%; }
+  @media (max-width: 920px) { .projects .card { flex-direction: column; } .projects .card-art { height: 150px; flex: none; } }
   .card { border: 1px solid var(--line); border-radius: 22px; overflow: hidden; display: flex; flex-direction: column; background: #fff; transition: transform .2s, box-shadow .2s; }
   .card:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -28px rgba(11,18,32,.35); }
   .card-art { height: 150px; position: relative; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 20px; }
@@ -440,22 +443,6 @@
         </div>
       </article>
 
-      <article class="card reveal">
-        <div class="card-art art-vote" aria-hidden="true">
-          <div class="ballot">
-            <div><i class="on">✓</i>Candidate A</div>
-            <div><i></i>Candidate B</div>
-            <div class="lock">🔒 One vote per user · enforced in the DB</div>
-          </div>
-        </div>
-        <div class="card-body">
-          <span class="tag">Full-stack &amp; security</span>
-          <h3>Online Voting System</h3>
-          <p>React + REST API with JWT auth, real-time counts, and one vote per user enforced in the database.</p>
-          <ul class="chips"><li>React</li><li>REST API</li><li>JWT</li><li>Docker</li></ul>
-          <div class="links"><a class="link" href="https://github.com/Hiralpokiya" target="_blank" rel="noopener">GitHub →</a></div>
-        </div>
-      </article>
     </div>
   </div>
 </section>
